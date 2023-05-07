@@ -1,9 +1,8 @@
 import DataTable from "datatables.net-dt";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import "./AllData.css";
 
 const AllData = () => {
-  const [data, setData] = useState<any[] | undefined>();
-
   useEffect(() => {
     fetch("http://localhost:3000/api/formdata")
       .then((res) => res.json())
@@ -26,13 +25,13 @@ const AllData = () => {
               item.Nationality,
             ];
           });
-          console.log(modifiedData);
-          setData(modifiedData);
+          return modifiedData;
         }
-        modifyData(jsonData);
-
+        console.log("1");
+        const newData = modifyData(jsonData);
+        console.log("2");
         new DataTable("#table", {
-          data,
+          data: newData,
           columns: [
             { title: "Name" },
             { title: "Age / Sex" },
