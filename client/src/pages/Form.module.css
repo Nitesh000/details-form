@@ -1,0 +1,21 @@
+.heading {
+  text-decoration: underline;
+  padding: 0 10px;
+}
+
+.detailsContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.detailsContainer p {
+  color: red;
+}
+
+.detailsContainer .spanTwo {
+  grid-column: span 2;
+}
+
+.detailsContainer select {
+  margin-right: 20px;
+}
